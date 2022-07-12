@@ -1,0 +1,19 @@
+.task {
+    @include flex(row, space-between);
+
+    &__desc{
+        @include flex();
+        gap: 10px;
+
+        &__title{
+            font-family: poppins-medium;
+            font-size: rem(20px);
+        }
+        &__doneAt{
+            font-family: poppins-extraLight;
+            color: rgb(50, 50, 50);
+            font-size: rem(14px);
+        }
+
+    }
+}

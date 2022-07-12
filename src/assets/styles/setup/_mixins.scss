@@ -1,0 +1,33 @@
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin btn() {
+    border: 0;
+    padding: rem(15px);
+    width: rem(280px);
+    font-family: poppins-semiBold;
+    text-transform: capitalize;
+    
+    &:hover{
+        // background-color: darken($pClr1, 5%);
+    }
+    
+    &.disable{
+        cursor: not-allowed;
+        // background-color: darken($pClr1, 10%);
+    }
+}
+
+@mixin input() {
+    height: rem(46px);
+    border: 0;
+    border-radius: 25px;
+    width: 100%;
+    &:focus-visible {
+        outline: 0;
+    }
+}

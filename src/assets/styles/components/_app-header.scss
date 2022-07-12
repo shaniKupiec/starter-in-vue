@@ -1,0 +1,15 @@
+.app-header {
+    @include flex(row, space-between);
+    margin-bottom: 20px;
+
+    &__nav {
+        display: flex;
+        gap: 10px;
+        a {
+            color: black;
+            &.router-link-exact-active {
+                text-decoration-line: underline
+            }
+        }
+    }
+}

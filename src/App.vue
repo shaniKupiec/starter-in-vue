@@ -1,26 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <section class="app">
+    <appHeader />
+    <router-view />
+    <section v-if="isLoading">loading...</section>
+  </section>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import appHeader from "./components/app-header.vue";
 export default {
-  name: 'App',
+  created() {
+    // this.$store.dispatch('loadBoards')
+    // this.$store.dispatch('loadUsers')
+  },
   components: {
-    HelloWorld
-  }
-}
+    appHeader,
+  },
+  computed: {
+    isLoading() {
+      return this.$store.getters.isLoading;
+    },
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
